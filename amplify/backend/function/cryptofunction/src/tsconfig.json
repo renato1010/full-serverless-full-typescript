@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "es2018",
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noImplicitAny": true,
+    "allowJs": true,
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "include": ["."],
+  "exclude": ["node_modules", "**/*.spect.ts"]
+}
