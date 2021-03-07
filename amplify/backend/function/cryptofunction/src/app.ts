@@ -8,14 +8,15 @@ See the License for the specific language governing permissions and limitations 
 
 import express, { Request, Response } from "express";
 import fetch from "node-fetch";
-import bodyParser from "body-parser";
+import { json, urlencoded } from "body-parser";
 import awsServerlessExpressMiddleware from "aws-serverless-express/middleware";
 import cors from "cors";
 import { APIGatewayProxyEventQueryStringParameters } from "aws-lambda";
 
 // declare a new express app
 const app = express();
-app.use(bodyParser.json());
+app.use(urlencoded());
+app.use(json());
 app.use(awsServerlessExpressMiddleware.eventContext());
 app.use(cors());
 
