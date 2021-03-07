@@ -23,7 +23,7 @@ I changed the project a bit using `Typescript` insted of `JavaScript` code examp
 _node-fetch_ instead of _Axios_.  
 AWS Amplify will generete the `src/aws-exports.js` file that you will need to configure the React client App
 
-## Typescript Lambda Functions (backernd)
+## Typescript Lambda Functions (backend)
 
 Amplify generates `JavaScript` backend similar to [Express.js](https://expressjs.com/), to opt in  
 for Typescript you will need to transpile those to JS first. What I did was just duplicate the generated  
@@ -37,6 +37,7 @@ the code.
 
 }
 ```
+
 This way my TS code will be transpiled and because they have the same filename `tsc` will generate overwrite  
 the JS files, of course to do that will need also write a `tsconfig.json` file:  
 `amplify/backend/function/cryptofunction/src/tsconfig.json`
