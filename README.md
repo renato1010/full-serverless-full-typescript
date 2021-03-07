@@ -9,7 +9,7 @@ the Lambda Function via an HTTP request.
 
 Once your API is created, we will interact with it using the Amplify client. Send requests to the  
 to the endpoint using the Amplify **API class** inside a React App  
-breafly: The Lambda function calls a third party service(free) [coinlore](https://www.coinlore.com/cryptocurrency-data-api)
+breafly: The Lambda function calls a third party service(free) [coinlore](https://www.coinlore.com/cryptocurrency-data-api)  
 then the frontend React will call that Lambda and render fetched list of crypto-coins  
 using the provided **API class**
 
