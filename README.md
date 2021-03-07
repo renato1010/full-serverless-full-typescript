@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+## What is this
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a short example to show some features of the AWS [Amplify](https://aws.amazon.com/amplify/).  
+Here it's showed a `data/API layer`, its a combination of _API endpoint_ and a _serverless function_
 
-## Available Scripts
+Using the Amplify CLI we create both the _API Gateway_ endpoint as well as the _Lambda function_.  
+The CLI will guide you throw the steps necessary to to configure the API to be able to invoke  
+the Lambda Function via an HTTP request.
 
-In the project directory, you can run:
+Once your API is created, we will interact with it using the Amplify client. Send requests to the  
+to the endpoint using the Amplify **API class** inside a React App
 
-### `npm start`
+### Note
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You will need an AWS acc. and also need some keys to configure the project, watch this [video](https://youtu.be/fWbM5DLh25U)  
+to learn how to configure the Amplify CLI
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Credits
 
-### `npm test`
+This example and code is based on book **Full Stack Serverless** by [Nader Dabit](https://twitter.com/dabit3)  
+I changed the project a bit using `Typescript` insted of `JavaScript` code examples, and used  
+_node-fetch_ instead of _Axios_
+AWS Amplify will generete the file `src/aws-exports.js` that you will need to configure the React client App
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Typescript Lambda Functions (backernd)
 
-### `npm run build`
+Amplify generates `JavaScript` backend similar to [Express.js](https://expressjs.com/), to opt in  
+for Typescript you will need to transpile those to JS first. What I did was simple duplicate the generated  
+`JavaScript` files Typescriptify those and create an **npm script** that will run before Amplify upload  
+the code.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```ts
+{
+  .....
+  "amplify:cryptofunction": "cd amplify/backend/function/cryptofunction/src && tsc"
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+}
+```
+This way my TS code will be transpiled and because they have the same filename `tsc` will generate overwrite  
+the JS files, of course to do that will need also write a `tsconfig.json` file:  
+`amplify/backend/function/cryptofunction/src/tsconfig.json`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
