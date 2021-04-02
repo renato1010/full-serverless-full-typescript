@@ -62,7 +62,7 @@ the code.
 }
 ```
 
-This way my TS code will be transpiled and because they have the same filename `tsc` will generate overwrite  
+This way my TS code will be transpiled and because they have the same filename `tsc` will generate & overwrite  
 the JS files, of course to do that will need also write a `tsconfig.json` file:  
 `amplify/backend/function/cryptofunction/src/tsconfig.json`
 
