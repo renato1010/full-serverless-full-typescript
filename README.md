@@ -49,6 +49,18 @@ AWS Amplify will generete the `src/aws-exports.js` file that you will need to co
 
 ## Typescript Lambda Functions (backend)
 
+To create a serverless function run:
+
+```bash
+amplify add function
+```
+
+- Select which capability you want to add: `Lambda function`
+- Provide a friendly name..... : `cryptofunction`
+- Choose the function runtime..: ``NodeJS`
+- Choose function template....: `Serverless express`
+- Do you want to access other resources ....from your lambda function: `No`
+
 Amplify generates `JavaScript` backend similar to [Express.js](https://expressjs.com/), to opt in  
 for Typescript you will need to transpile those to JS first. What I did was just duplicate the generated  
 `JavaScript` files Typescriptify those and create an **npm script** that will run before Amplify upload  
